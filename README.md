@@ -25,6 +25,11 @@ Try it: [https://t.me/e_book_send_bot](https://t.me/e_book_send_bot)
 - htm 
 - pdf
 - epub
+- png
+- gif
+- jpg
+- jpeg
+- bmp
 
 ### convert to epub and send
 - azw 

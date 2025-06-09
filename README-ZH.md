@@ -31,6 +31,11 @@
 - htm 
 - pdf
 - epub
+- png
+- gif
+- jpg
+- jpeg
+- bmp
 
 ### 转换成mobi格式发送
 - azw 
