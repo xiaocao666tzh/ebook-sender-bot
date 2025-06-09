@@ -25,6 +25,7 @@ services:
       - SMTP_PASSWORD=
       - BOT_TOKEN=
       - DEVELOPER_CHAT_ID=
+      - WHITELIST_CHAT_IDS=
     volumes:
       - ./ebooks/:/app/storage/
       - ./default.log:/app/default.log

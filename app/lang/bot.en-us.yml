@@ -95,3 +95,5 @@ en-us:
     Done.You can check if this file can be found on your kindle!
   sendFailed:
     Sending failed!
+  not_in_whitelist: |
+    You cannot use this bot because you are not in the whitelist.

@@ -102,3 +102,5 @@ zh-hans:
     已发送，请在kindle首页刷新并查看是否已经收到该文档。
   sendFailed:
     发送失败！
+  not_in_whitelist: |
+    您不在白名单中，无法使用此机器人。

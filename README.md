@@ -131,6 +131,7 @@ mailcow_mailbox_domain=mailcow_mailbox_domain
 bot_token=your_telegram_bot_token
 # your telegram chat id
 developer_chat_id=your_telegram_chat_id
+whitelist_chat_ids=whitelist_chat_ids_list # separate with , set None for unlimit
 ```
 
 ## Preview

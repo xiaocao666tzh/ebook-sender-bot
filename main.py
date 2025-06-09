@@ -13,7 +13,8 @@ def register_db() -> None:
 def run_tg_bot() -> None:
     bot_token = telegram_config('bot_token')
     develop_chat_id = telegram_config('developer_chat_id')
-    bot = TgBot(bot_token, develop_chat_id)
+    whitelist = telegram_config('whitelist_chat_ids')
+    bot = TgBot(bot_token, develop_chat_id, whitelist=whitelist)
     bot.run()
 
 

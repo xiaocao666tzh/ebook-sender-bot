@@ -70,6 +70,7 @@ docker run -d \
     -e SMTP_PASSWORD={YOUR_SMTP_PASSWORD} \
     -e BOT_TOKEN={YOUR_BOT_TOKEN} \
     -e DEVELOPER_CHAT_ID={YOUR_TELEGRAM_CHAT_ID} \
+    -e WHITELIST_CHAT_IDS={WHILTELIST_CHAT_IDS_LIST} \
     -v `./ebooks/`:`/app/storage/` \
     -v `./default.log`:`/app/default.log` \
     qcgzxw/ebook-sender-bot
@@ -137,6 +138,7 @@ mailcow_mailbox_domain=mailcow_mailbox_domain
 bot_token=your_telegram_bot_token
 # your telegram chat id
 developer_chat_id=your_telegram_chat_id
+whitelist_chat_ids=whitelist_chat_ids_list # ,分隔 None为无限制
 ```
 
 ## 预览

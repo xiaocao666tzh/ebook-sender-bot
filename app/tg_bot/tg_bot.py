@@ -24,12 +24,13 @@ class TgBot:
     reply = None
     lang = 'en-us'
     logger = None
-
+    whitelist = 'None'
     maintenance_end_timestamp = 0
 
-    def __init__(self, token: str, chat_id: str):
+    def __init__(self, token: str, chat_id: str, whitelist: str = 'None'):
         self.token = token
         self.develop_chat_id = chat_id
+        self.whitelist = whitelist
         if default_config('mode') == 'dev':
             logging.basicConfig(level=logging.DEBUG,
                                 format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -84,6 +85,9 @@ class TgBot:
                 if self.is_in_maintenance_mode():
                     return self.command_maintenance(update, context)
                 user = User(update.message.from_user)
+                user_id = update.message.from_user.id
+                if self.whitelist.upper() != 'NONE' and str(user_id) not in self.whitelist:
+                    return self.reply.send_msg(update, 'not_in_whitelist')
                 if not user.create_email_sender():
                     user.create_sender_email()
                     self.reply.send_msg(update, 'email_confirm', email=gen_sender_email_username(update.message.from_user.id))
@@ -144,6 +148,7 @@ class TgBot:
         self.maintenance_end_timestamp = 0
         self.reply.send_msg(update, 'disableMaintenanceModeNotification')
 
+    @check_perm
     def command_help(self, update: Update, context: CallbackContext) -> None:
         self.reply.send_msg(update, 'help', email=gen_sender_email_username(update.message.from_user.id))
 
